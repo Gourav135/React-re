@@ -13,7 +13,7 @@ export const Productdetails=()=>{
 const [db,setdb]=useState([])
 
     const getdata = ()=>{
-        axios.get(`http://localhost:3001/tdata/${id}`).then(({data})=>{
+        axios.get(`http://localhost:8080/tdata/${id}`).then(({data})=>{
             setdb([data])
         })
     }
