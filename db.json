@@ -1,3 +1,16 @@
 {
-  "tdata": []
+  "user": [
+    {
+      "country": "India ",
+      "city": "Delhi",
+      "population": "1000000",
+      "id": 1
+    },
+    {
+      "country": "India",
+      "city": "UP",
+      "population": "200000000",
+      "id": 2
+    }
+  ]
 }

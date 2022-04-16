@@ -1,18 +1,34 @@
-import { ADD_CITY, ADD_COUNTRY, ADD_POPULATION } from "./action";
-
-
-export const reducer =(store,{type,payload})=>{
-
-    switch (type){
-    case ADD_COUNTRY:
-        return{...store, country:[...payload]};
-        case ADD_CITY:
-            return{...store, city:[...payload]};
-
-            case ADD_POPULATION:
-                return{...store, population:[...payload]};
-
-     default:return store;
+import * as types from './actionType'
+const initialState = {
+    users:[],
+    user:[],
+    loading:true
 }
 
+const userReducers = (state=initialState,action)=>{
+    switch(action.type){
+        case types.GET_USERS:
+            return {
+                ...state,
+                users:action.payload,
+                loading:false,
+            };
+            case types.DELETE_USER:
+                return{
+                    ...state,
+                    loading:false,
+                };
+                case types.ADD_USER:
+                    case types.GETONECITY:
+                    return{
+                        ...state,
+                        user:action.payload,
+                        loading:false,
+                    }
+                    case types.UPDTAE:
+            default:
+                return state
+    }
 }
+
+export default userReducers
