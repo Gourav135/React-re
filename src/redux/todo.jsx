@@ -22,7 +22,7 @@ export const Todo =()=>{
     },[])
 
         const getdata = ()=>{
-        axios.get("http://localhost:3001/tdata").then(({data})=>{
+        axios.get("http://localhost:8080/tdata").then(({data})=>{
 
         dispatch(addpopulation(data))
         dispatch(addcity(data))
@@ -36,7 +36,7 @@ export const Todo =()=>{
 
     const postdata = ()=>{
         
-        axios.post("http://localhost:3001/tdata",{ country:text,city:city,population:population,status:"uncompleted"}).then(()=>{
+        axios.post("http://localhost:8080/tdata",{ country:text,city:city,population:population,status:"uncompleted"}).then(()=>{
             getdata()
         })
     }
@@ -54,7 +54,7 @@ export const Todo =()=>{
 
         const remove = tododata.filter((todo)=>{return todo.id !== id})
     
-        axios.delete(`http://localhost:3001/tdata/${id}`).then(()=>{
+        axios.delete(`http://localhost:8080/tdata/${id}`).then(()=>{
             getdata();
         })
         dispatch(addpopulation(remove)) 
