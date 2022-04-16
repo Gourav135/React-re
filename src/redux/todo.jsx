@@ -44,7 +44,7 @@ export const Todo =()=>{
         if(status==="uncompleted"){status="completed"}
         else{status="uncompleted"}
         console.log(id,"patch")
-        axios.patch(`http://localhost:3001/tdata/${id}`,{status}).then(()=>{
+        axios.patch(`http://localhost:8080/tdata/${id}`,{status}).then(()=>{
     getdata()})
     }
 
